@@ -584,10 +584,72 @@ footer a{font-weight:900}
 @media (prefers-reduced-motion:reduce){.ig-col{animation:none}.ig-down{translate:0 -50%}}
 
 /* 스크롤 등장 모션 + 인트로 스파크 회전 */
-:is(.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*){transition:opacity .9s cubic-bezier(.2,.7,.2,1),translate .9s cubic-bezier(.2,.7,.2,1)}
-.rv-on :is(.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*):not(.rv-in){opacity:0;translate:0 28px}
+:is(.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*, #connect .sec-head>*, .cx-flow>li, #save .sec-head>*, .sv-list>li){transition:opacity .9s cubic-bezier(.2,.7,.2,1),translate .9s cubic-bezier(.2,.7,.2,1)}
+.rv-on :is(.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*, #connect .sec-head>*, .cx-flow>li, #save .sec-head>*, .sv-list>li):not(.rv-in){opacity:0;translate:0 28px}
 .intro-spark img{animation:kv-spin 16s linear infinite}
 @media (prefers-reduced-motion:reduce){.intro-spark img{animation:none}}
+
+/* 2차 수정(12/3 세미나): 히어로 배지 · 시연 번호 · 홈페이지–CRM 연동 · 인건비 */
+.hero h1{display:flex;align-items:center;flex-wrap:wrap;gap:.3em;font-size:52px;font-weight:700}
+.hero-badge{display:inline-block;background:var(--accent);color:#fff;padding:.1em .38em .14em;border-radius:8px;font-weight:800;letter-spacing:-.04em}
+#demo h2 em,#connect h2 em,#save h2 em{font-style:normal;color:var(--accent)}
+.demo .num{width:auto;height:auto;border:0;border-radius:0;display:block;font-size:64px;line-height:.9;font-weight:700;letter-spacing:-.05em;margin-bottom:20px}
+.choice .cn{font-weight:700;color:var(--accent);font-size:13px;letter-spacing:.03em;margin-right:8px}
+#connect{background:var(--surface)}
+#save{background:#EBF0F6;border-bottom:1px solid var(--line2)}
+#connect .wrap,#save .wrap{display:flex;flex-direction:column;gap:56px}
+#connect .sec-head,#save .sec-head{border:0;padding:0;gap:18px;position:static}
+#connect .sub,#save .sub{font-size:18px;line-height:1.75;color:var(--body);max-width:640px}
+.cx-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.cx-flow li{position:relative;display:flex;flex-direction:column;gap:10px;padding:28px 26px 30px;background:#F2F5F9;border:1px solid var(--line);min-height:190px}
+.cx-flow li:not(:last-child)::after{content:"";position:absolute;top:50%;right:-31px;width:22px;height:22px;margin-top:-11px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M3 11h15m-6-6 6 6-6 6' fill='none' stroke='%232E8FFF' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.cx-step{font:700 12px/1 Arial,sans-serif;letter-spacing:.12em;color:var(--accent)}
+.cx-flow b{font-size:24px;font-weight:700;letter-spacing:-.04em;color:var(--ink);margin-top:6px}
+.cx-flow small{font-size:15px;line-height:1.65;color:var(--muted)}
+.cx-flow .cx-hub{background:var(--navy);border-color:var(--navy)}
+.cx-hub b{color:#fff}.cx-hub small{color:#b0b5bc}
+.cx-flow li:last-child{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.sv-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.sv-list li{display:grid;grid-template-columns:56px minmax(0,1fr) 44px minmax(0,1.3fr);align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line2)}
+.sv-no{font:700 15px/1 Arial,sans-serif;color:var(--accent);letter-spacing:.04em}
+.sv-before,.sv-after{display:flex;flex-direction:column;gap:6px;font-size:22px;letter-spacing:-.035em;line-height:1.4}
+.sv-before{color:var(--muted);font-weight:500}.sv-before s{text-decoration-thickness:1px;text-decoration-color:#9aa6b5}
+.sv-after{color:var(--ink);font-weight:800}
+.sv-before small,.sv-after small{font-size:12px;font-weight:700;letter-spacing:.02em;text-decoration:none;display:inline-block}
+.sv-before small{color:#8a96a6}.sv-after small{color:var(--accent)}
+.sv-arrow{font:700 26px/1 Arial,sans-serif;color:var(--accent);text-align:center}
+.info small.park{color:var(--body);font-weight:600}
+.ticket dd small{display:block;font-size:13px;font-weight:400;opacity:.75;margin-top:4px}
+@media(min-width:1001px){#save .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}}
+@media(max-width:1000px){.cx-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.cx-flow li:nth-child(2)::after{display:none}}
+@media(max-width:700px){
+.hero h1{font-size:30px;gap:.25em}
+.hero-badge{border-radius:6px}
+.demo .num{font-size:48px;margin-bottom:16px}
+#connect .wrap,#save .wrap{gap:34px}
+#connect .sub,#save .sub{font-size:15px}
+.cx-flow{grid-template-columns:1fr;gap:30px}
+.cx-flow li{min-height:0;padding:22px 20px 24px;gap:8px}
+.cx-flow li:not(:last-child)::after,.cx-flow li:nth-child(2)::after{display:block;top:auto;bottom:-27px;right:auto;left:50%;margin:0 0 0 -11px;rotate:90deg}
+.cx-flow b{font-size:20px;margin-top:2px}
+.cx-flow small{font-size:14px}
+.sv-list li{grid-template-columns:34px minmax(0,1fr);gap:8px 12px;padding:20px 0}
+.sv-no{grid-row:span 3;align-self:start;padding-top:4px;font-size:13px}
+.sv-arrow{text-align:left;font-size:18px;rotate:90deg;width:18px}
+.sv-before,.sv-after{font-size:18px;gap:4px}
+}
+
+/* 흐름 카드 아이콘: STEP 과 제목 사이, 왼쪽 정렬, 박스 없이 */
+.cx-ico{display:block;color:var(--accent);line-height:0;margin:10px 0 2px}
+.cx-ico svg{width:34px;height:34px}
+@media(max-width:700px){.cx-ico{margin:6px 0 0}.cx-ico svg{width:30px;height:30px}}
+/* 카드 사이 화살표 제거 → 간격도 좁힌다 */
+.cx-flow li::after,.cx-flow li:not(:last-child)::after,.cx-flow li:nth-child(2)::after{content:none;display:none}
+.cx-flow{gap:16px}
+@media(max-width:700px){.cx-flow{gap:12px}}
+/* STEP 04: 브랜드 컬러로 채우고 글자·아이콘은 흰색 */
+.cx-flow li:last-child{background:var(--accent);border-color:var(--accent);box-shadow:none}
+.cx-flow li:last-child :is(.cx-step,.cx-ico,b,small){color:#fff}
 </style>
 <script>/* 스크롤 등장 모션: 지원되고 «동작 줄이기»가 아닐 때만 켠다 */if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rv-on')</script>
 </head>
@@ -633,7 +695,7 @@ footer a{font-weight:900}
       <img class="kv-svg mv-spin" src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjQ4Ljc3ODIiIGhlaWdodD0iNDQuNzczMiIgdmlld0JveD0iMCAwIDQ4Ljc3ODIgNDQuNzczMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTI0LjM4OTEgMFYyMi4zODY2TTI0LjM4OTEgMjIuMzg2NlY0NC43NzMyTTI0LjM4OTEgMjIuMzg2NkgwTTI0LjM4OTEgMjIuMzg2Nkg0OC43NzgyTTI0LjM4OTEgMjIuMzg2Nkw2Ljk2ODMyIDYuMzk2MThNMjQuMzg5MSAyMi4zODY2TDQxLjgwOTkgMzguMzc3MU0yNC4zODkxIDIyLjM4NjZMNi45NjgzMiAzOC4zNzcxTTI0LjM4OTEgMjIuMzg2Nkw0MS44MDk5IDYuMzk2MTgiIHN0cm9rZS13aWR0aD0iNS41IiBzdHJva2U9IiNGN0Y4RkEiLz4KPC9zdmc+Cg==" width="48.7782" height="44.7732" alt="" style="left:53.623%;top:75.777%;width:4.065%;height:8.955%;transform:rotate(10deg);--dur:12s">
       <img class="kv-svg mv-spin" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjgiIGhlaWdodD0iMTY4IiB2aWV3Qm94PSIwIDAgMTY4IDE2OCIgZmlsbD0ibm9uZSI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjIj48Y2lyY2xlIGN4PSI4NCIgY3k9Ijg0IiByPSI4NCIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjKSI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjggODQgODQpIHRyYW5zbGF0ZSgtMTE2LjUgLTExNikiPgo8ZyBpZD0iR3JvdXAiPgo8ZyBpZD0iVmVjdG9yIj4KPHBhdGggZD0iTTIuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMi41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzIiPgo8cGF0aCBkPSJNMTMuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMTMuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8zIj4KPHBhdGggZD0iTTI0LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTI0LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfNCI+CjxwYXRoIGQ9Ik0zNS41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0zNS41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzUiPgo8cGF0aCBkPSJNNDYuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNDYuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl82Ij4KPHBhdGggZD0iTTU3LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTU3LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfNyI+CjxwYXRoIGQ9Ik02OC41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik02OC41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzgiPgo8cGF0aCBkPSJNNzkuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNzkuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl85Ij4KPHBhdGggZD0iTTkwLjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTkwLjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMTAiPgo8cGF0aCBkPSJNMTAxLjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTEwMS41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzExIj4KPHBhdGggZD0iTTExMi41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xMTIuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8xMiI+CjxwYXRoIGQ9Ik0xMjMuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMTIzLjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMTMiPgo8cGF0aCBkPSJNMTM0LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTEzNC41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzE0Ij4KPHBhdGggZD0iTTE0NS41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNDUuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8xNSI+CjxwYXRoIGQ9Ik0xNTYuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMTU2LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMTYiPgo8cGF0aCBkPSJNMTY3LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTE2Ny41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzE3Ij4KPHBhdGggZD0iTTE3OC41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNzguNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8xOCI+CjxwYXRoIGQ9Ik0xODkuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMTg5LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMTkiPgo8cGF0aCBkPSJNMjAwLjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTIwMC41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzIwIj4KPHBhdGggZD0iTTIxMS41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0yMTEuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8yMSI+CjxwYXRoIGQ9Ik0yMjIuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMjIyLjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMjIiPgo8cGF0aCBkPSJNMjMzLjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTIzMy41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzIzIj4KPHBhdGggZD0iTTI0NC41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0yNDQuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8yNCI+CjxwYXRoIGQ9Ik0yNTUuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMjU1LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMjUiPgo8cGF0aCBkPSJNMjY2LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTI2Ni41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzI2Ij4KPHBhdGggZD0iTTI3Ny41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0yNzcuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8yNyI+CjxwYXRoIGQ9Ik0yODguNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMjg4LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMjgiPgo8cGF0aCBkPSJNMjk5LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTI5OS41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzI5Ij4KPHBhdGggZD0iTTMxMC41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0zMTAuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8zMCI+CjxwYXRoIGQ9Ik0zMjEuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMzIxLjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMzEiPgo8cGF0aCBkPSJNMzMyLjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTMzMi41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzMyIj4KPHBhdGggZD0iTTM0My41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0zNDMuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8zMyI+CjxwYXRoIGQ9Ik0zNTQuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMzU0LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMzQiPgo8cGF0aCBkPSJNMzY1LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTM2NS41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8ZyBpZD0iVmVjdG9yXzM1Ij4KPHBhdGggZD0iTTM3Ni41IDYuNTE0NTdlLTA2VjQwMFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0zNzYuNSA2LjUxNDU3ZS0wNlY0MDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlPSIjMTIxOTIzIi8+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8zNiI+CjxwYXRoIGQ9Ik0zODcuNSA2LjUxNDU3ZS0wNlY0MDBaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMzg3LjUgNi41MTQ1N2UtMDZWNDAwIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZT0iIzEyMTkyMyIvPgo8L2c+CjxnIGlkPSJWZWN0b3JfMzciPgo8cGF0aCBkPSJNMzk4LjUgNi41MTQ1N2UtMDZWNDAwWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTM5OC41IDYuNTE0NTdlLTA2VjQwMCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2U9IiMxMjE5MjMiLz4KPC9nPgo8L2c+CjwvZz48L2c+PC9zdmc+" width="168" height="168" alt="" style="left:0.000%;top:66.400%;width:14.000%;height:33.600%;--dur:40s">
     </div>
-    <div class="hero-title"><p class="display-title" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjExODQiIGhlaWdodD0iMjE5IiB2aWV3Qm94PSIwIDAgMTE4NCAyMTkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJBSSBNQVJLRVRJTkcgLyAmIzIzNjsmIzE1NTsmIzE0NDsmIzIzNTsmIzE3OTsmIzE4NDsgJiMyMzY7JiMxMzI7JiMxNTY7JiMyMzY7JiMxNzg7JiMxODA7ICYjMjM1OyYjMTc4OyYjMTYxOyYjMjM3OyYjMTMyOyYjMTc2OyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzBfNDcpIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTkxLjIzNzUgMTcuODYyNUwxMTguMzUgMjAwSDY5Ljg2MjVMNjcuNSAxNjcuMjYySDUwLjUxMjVMNDcuNyAyMDBILTEuMzVMMjIuNzI1IDE3Ljg2MjVIOTEuMjM3NVpNNjYuMTUgMTM0Ljk3NUM2My43NSAxMTQuMzUgNjEuMzUgODguODg3NSA1OC45NSA1OC41ODc1QzU0LjE1IDkzLjM4NzUgNTEuMTUgMTE4Ljg1IDQ5Ljk1IDEzNC45NzVINjYuMTVaTTE2NS43NDkgMTcuODYyNVYyMDBIMTE4LjM4NlYxNy44NjI1SDE2NS43NDlaTTM1NS4zODMgMTcuODYyNVYyMDBIMzEzLjk4M1Y3Ny4wMzc1TDI5Ny40NDYgMjAwSDI2OC4wODNMMjUwLjY0NSA3OS44NVYyMDBIMjA5LjI0NlYxNy44NjI1SDI3MC41NThDMjcyLjM1OCAyOC44MTI1IDI3NC4yNzEgNDEuNzEyNSAyNzYuMjk2IDU2LjU2MjVMMjgyLjgyMSAxMDIuOTEzTDI5My42MjEgMTcuODYyNUgzNTUuMzgzWk00NDguMTE5IDE3Ljg2MjVMNDc1LjIzMiAyMDBINDI2Ljc0NEw0MjQuMzgyIDE2Ny4yNjJINDA3LjM5NEw0MDQuNTgyIDIwMEgzNTUuNTMyTDM3OS42MDcgMTcuODYyNUg0NDguMTE5Wk00MjMuMDMyIDEzNC45NzVDNDIwLjYzMiAxMTQuMzUgNDE4LjIzMiA4OC44ODc1IDQxNS44MzIgNTguNTg3NUM0MTEuMDMyIDkzLjM4NzUgNDA4LjAzMiAxMTguODUgNDA2LjgzMiAxMzQuOTc1SDQyMy4wMzJaTTQ3NS4yNjcgMTcuODYyNUg1MDguNzkzQzUzMS4xNDIgMTcuODYyNSA1NDYuMjc0IDE4LjcyNSA1NTQuMTg2IDIwLjQ1QzU2Mi4wOTkgMjIuMTc1IDU2OC41NDkgMjYuNTgxMyA1NzMuNTM2IDMzLjY2ODhDNTc4LjUyNCA0MC43NTYzIDU4MS4wMTcgNTIuMDYyNSA1ODEuMDE3IDY3LjU4NzVDNTgxLjAxNyA4MS43NjI1IDU3OS4yNTUgOTEuMjg3NSA1NzUuNzMgOTYuMTYyNUM1NzIuMjA1IDEwMS4wMzggNTY1LjI2NyAxMDMuOTYzIDU1NC45MTcgMTA0LjkzOEM1NjQuMjkyIDEwNy4yNjIgNTcwLjU5MyAxMTAuMzc1IDU3My44MTcgMTE0LjI3NUM1NzcuMDQyIDExOC4xNzUgNTc5LjA0OSAxMjEuNzU2IDU3OS44MzYgMTI1LjAxOUM1ODAuNjI0IDEyOC4yODEgNTgxLjAxNyAxMzcuMjYyIDU4MS4wMTcgMTUxLjk2MlYyMDBINTM3LjAzVjEzOS40NzVDNTM3LjAzIDEyOS43MjUgNTM2LjI2MSAxMjMuNjg4IDUzNC43MjQgMTIxLjM2M0M1MzMuMTg2IDExOS4wMzggNTI5LjE1NSAxMTcuODc1IDUyMi42MyAxMTcuODc1VjIwMEg0NzUuMjY3VjE3Ljg2MjVaTTUyMi42MyA0OS4wMjVWODkuNTI1QzUyNy45NTUgODkuNTI1IDUzMS42ODYgODguNzkzOCA1MzMuODI0IDg3LjMzMTNDNTM1Ljk2MSA4NS44Njg4IDUzNy4wMyA4MS4xMjUgNTM3LjAzIDczLjFWNjMuMDg3NUM1MzcuMDMgNTcuMzEyNSA1MzUuOTk5IDUzLjUyNSA1MzMuOTM2IDUxLjcyNUM1MzEuODc0IDQ5LjkyNSA1MjguMTA1IDQ5LjAyNSA1MjIuNjMgNDkuMDI1Wk03MDQuMTI4IDE3Ljg2MjVMNjc3LjAxNiAxMDAuMUw3MDYuNzE2IDIwMEg2NTcuNzc4TDYzOC42NTMgMTIxLjkyNVYyMDBINTkxLjI5MVYxNy44NjI1SDYzOC42NTNWODguNjI1TDY1OS42OTEgMTcuODYyNUg3MDQuMTI4Wk03MDYuODY0IDE3Ljg2MjVINzg1LjgzOVY1NC4zMTI1SDc1NC4yMjdWODguODVINzgzLjgxNFYxMjMuNUg3NTQuMjI3VjE2My41NUg3ODguOTg5VjIwMEg3MDYuODY0VjE3Ljg2MjVaTTg4OS45MzggMTcuODYyNVY1NC4zMTI1SDg2MS44MTNWMjAwSDgxNC40NVY1NC4zMTI1SDc4Ni40MzhWMTcuODYyNUg4ODkuOTM4Wk05NDAuMDM2IDE3Ljg2MjVWMjAwSDg5Mi42NzRWMTcuODYyNUg5NDAuMDM2Wk0xMDU2LjczIDE3Ljg2MjVWMjAwSDEwMTUuMjJMOTkwLjU4NSAxMTcuMlYyMDBIOTUwLjk4NVYxNy44NjI1SDk5MC41ODVMMTAxNy4xMyA5OS44NzVWMTcuODYyNUgxMDU2LjczWk0xMTc2LjM2IDg0LjkxMjVIMTEyOVY2OC4zNzVDMTEyOSA1Ny45NSAxMTI4LjU1IDUxLjQyNSAxMTI3LjY1IDQ4LjhDMTEyNi43NSA0Ni4xNzUgMTEyNC42MSA0NC44NjI1IDExMjEuMjMgNDQuODYyNUMxMTE4LjMxIDQ0Ljg2MjUgMTExNi4zMiA0NS45ODc1IDExMTUuMjcgNDguMjM3NUMxMTE0LjIyIDUwLjQ4NzUgMTExMy43IDU2LjI2MjUgMTExMy43IDY1LjU2MjVWMTUyLjk3NUMxMTEzLjcgMTYxLjE1IDExMTQuMjIgMTY2LjUzMSAxMTE1LjI3IDE2OS4xMTlDMTExNi4zMiAxNzEuNzA2IDExMTguNDIgMTczIDExMjEuNTcgMTczQzExMjUuMDIgMTczIDExMjcuMzYgMTcxLjUzOCAxMTI4LjYgMTY4LjYxMkMxMTI5Ljg0IDE2NS42ODcgMTEzMC40NiAxNTkuOTg3IDExMzAuNDYgMTUxLjUxMlYxMjkuOTEzSDExMjAuOVYxMDIuMjM4SDExNzYuMzZWMjAwSDExNDYuNTVMMTE0Mi4xNiAxODYuOTVDMTEzOC45MyAxOTIuNTc1IDExMzQuODYgMTk2Ljc5NCAxMTI5Ljk1IDE5OS42MDZDMTEyNS4wNCAyMDIuNDE5IDExMTkuMjUgMjAzLjgyNSAxMTEyLjU3IDIwMy44MjVDMTEwNC42MiAyMDMuODI1IDEwOTcuMTggMjAxLjg5NCAxMDkwLjI0IDE5OC4wMzFDMTA4My4zIDE5NC4xNjkgMTA3OC4wMyAxODkuMzg3IDEwNzQuNDMgMTgzLjY4N0MxMDcwLjgzIDE3Ny45ODcgMTA2OC41OCAxNzIuMDA2IDEwNjcuNjggMTY1Ljc0NEMxMDY2Ljc4IDE1OS40ODEgMTA2Ni4zMyAxNTAuMDg4IDEwNjYuMzMgMTM3LjU2M1Y4My40NUMxMDY2LjMzIDY2LjA1IDEwNjcuMjcgNTMuNDEyNSAxMDY5LjE1IDQ1LjUzNzVDMTA3MS4wMiAzNy42NjI1IDEwNzYuNCAzMC40NDM4IDEwODUuMjkgMjMuODgxM0MxMDk0LjE4IDE3LjMxODggMTEwNS42NyAxNC4wMzc1IDExMTkuNzcgMTQuMDM3NUMxMTMzLjY1IDE0LjAzNzUgMTE0NS4xNiAxNi44ODc1IDExNTQuMzEgMjIuNTg3NUMxMTYzLjQ2IDI4LjI4NzUgMTE2OS40MiAzNS4wNTYyIDExNzIuMiA0Mi44OTM3QzExNzQuOTcgNTAuNzMxMiAxMTc2LjM2IDYyLjExMjUgMTE3Ni4zNiA3Ny4wMzc1Vjg0LjkxMjVaIiBmaWxsPSIjMkU4RkZGIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMF80NyI+CjxyZWN0IHdpZHRoPSIxMTg0IiBoZWlnaHQ9IjIxOSIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K" width="1184" height="219" alt=""></p><div class="hero-title-bottom"><h1>AI 마케팅 자동화 시연회</h1><p>LIVE DEMO <span>2026</span></p></div></div>
+    <div class="hero-title"><p class="display-title" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjExODQiIGhlaWdodD0iMjE5IiB2aWV3Qm94PSIwIDAgMTE4NCAyMTkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJBSSBNQVJLRVRJTkcgLyAmIzIzNjsmIzE1NTsmIzE0NDsmIzIzNTsmIzE3OTsmIzE4NDsgJiMyMzY7JiMxMzI7JiMxNTY7JiMyMzY7JiMxNzg7JiMxODA7ICYjMjM1OyYjMTc4OyYjMTYxOyYjMjM3OyYjMTMyOyYjMTc2OyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzBfNDcpIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTkxLjIzNzUgMTcuODYyNUwxMTguMzUgMjAwSDY5Ljg2MjVMNjcuNSAxNjcuMjYySDUwLjUxMjVMNDcuNyAyMDBILTEuMzVMMjIuNzI1IDE3Ljg2MjVIOTEuMjM3NVpNNjYuMTUgMTM0Ljk3NUM2My43NSAxMTQuMzUgNjEuMzUgODguODg3NSA1OC45NSA1OC41ODc1QzU0LjE1IDkzLjM4NzUgNTEuMTUgMTE4Ljg1IDQ5Ljk1IDEzNC45NzVINjYuMTVaTTE2NS43NDkgMTcuODYyNVYyMDBIMTE4LjM4NlYxNy44NjI1SDE2NS43NDlaTTM1NS4zODMgMTcuODYyNVYyMDBIMzEzLjk4M1Y3Ny4wMzc1TDI5Ny40NDYgMjAwSDI2OC4wODNMMjUwLjY0NSA3OS44NVYyMDBIMjA5LjI0NlYxNy44NjI1SDI3MC41NThDMjcyLjM1OCAyOC44MTI1IDI3NC4yNzEgNDEuNzEyNSAyNzYuMjk2IDU2LjU2MjVMMjgyLjgyMSAxMDIuOTEzTDI5My42MjEgMTcuODYyNUgzNTUuMzgzWk00NDguMTE5IDE3Ljg2MjVMNDc1LjIzMiAyMDBINDI2Ljc0NEw0MjQuMzgyIDE2Ny4yNjJINDA3LjM5NEw0MDQuNTgyIDIwMEgzNTUuNTMyTDM3OS42MDcgMTcuODYyNUg0NDguMTE5Wk00MjMuMDMyIDEzNC45NzVDNDIwLjYzMiAxMTQuMzUgNDE4LjIzMiA4OC44ODc1IDQxNS44MzIgNTguNTg3NUM0MTEuMDMyIDkzLjM4NzUgNDA4LjAzMiAxMTguODUgNDA2LjgzMiAxMzQuOTc1SDQyMy4wMzJaTTQ3NS4yNjcgMTcuODYyNUg1MDguNzkzQzUzMS4xNDIgMTcuODYyNSA1NDYuMjc0IDE4LjcyNSA1NTQuMTg2IDIwLjQ1QzU2Mi4wOTkgMjIuMTc1IDU2OC41NDkgMjYuNTgxMyA1NzMuNTM2IDMzLjY2ODhDNTc4LjUyNCA0MC43NTYzIDU4MS4wMTcgNTIuMDYyNSA1ODEuMDE3IDY3LjU4NzVDNTgxLjAxNyA4MS43NjI1IDU3OS4yNTUgOTEuMjg3NSA1NzUuNzMgOTYuMTYyNUM1NzIuMjA1IDEwMS4wMzggNTY1LjI2NyAxMDMuOTYzIDU1NC45MTcgMTA0LjkzOEM1NjQuMjkyIDEwNy4yNjIgNTcwLjU5MyAxMTAuMzc1IDU3My44MTcgMTE0LjI3NUM1NzcuMDQyIDExOC4xNzUgNTc5LjA0OSAxMjEuNzU2IDU3OS44MzYgMTI1LjAxOUM1ODAuNjI0IDEyOC4yODEgNTgxLjAxNyAxMzcuMjYyIDU4MS4wMTcgMTUxLjk2MlYyMDBINTM3LjAzVjEzOS40NzVDNTM3LjAzIDEyOS43MjUgNTM2LjI2MSAxMjMuNjg4IDUzNC43MjQgMTIxLjM2M0M1MzMuMTg2IDExOS4wMzggNTI5LjE1NSAxMTcuODc1IDUyMi42MyAxMTcuODc1VjIwMEg0NzUuMjY3VjE3Ljg2MjVaTTUyMi42MyA0OS4wMjVWODkuNTI1QzUyNy45NTUgODkuNTI1IDUzMS42ODYgODguNzkzOCA1MzMuODI0IDg3LjMzMTNDNTM1Ljk2MSA4NS44Njg4IDUzNy4wMyA4MS4xMjUgNTM3LjAzIDczLjFWNjMuMDg3NUM1MzcuMDMgNTcuMzEyNSA1MzUuOTk5IDUzLjUyNSA1MzMuOTM2IDUxLjcyNUM1MzEuODc0IDQ5LjkyNSA1MjguMTA1IDQ5LjAyNSA1MjIuNjMgNDkuMDI1Wk03MDQuMTI4IDE3Ljg2MjVMNjc3LjAxNiAxMDAuMUw3MDYuNzE2IDIwMEg2NTcuNzc4TDYzOC42NTMgMTIxLjkyNVYyMDBINTkxLjI5MVYxNy44NjI1SDYzOC42NTNWODguNjI1TDY1OS42OTEgMTcuODYyNUg3MDQuMTI4Wk03MDYuODY0IDE3Ljg2MjVINzg1LjgzOVY1NC4zMTI1SDc1NC4yMjdWODguODVINzgzLjgxNFYxMjMuNUg3NTQuMjI3VjE2My41NUg3ODguOTg5VjIwMEg3MDYuODY0VjE3Ljg2MjVaTTg4OS45MzggMTcuODYyNVY1NC4zMTI1SDg2MS44MTNWMjAwSDgxNC40NVY1NC4zMTI1SDc4Ni40MzhWMTcuODYyNUg4ODkuOTM4Wk05NDAuMDM2IDE3Ljg2MjVWMjAwSDg5Mi42NzRWMTcuODYyNUg5NDAuMDM2Wk0xMDU2LjczIDE3Ljg2MjVWMjAwSDEwMTUuMjJMOTkwLjU4NSAxMTcuMlYyMDBIOTUwLjk4NVYxNy44NjI1SDk5MC41ODVMMTAxNy4xMyA5OS44NzVWMTcuODYyNUgxMDU2LjczWk0xMTc2LjM2IDg0LjkxMjVIMTEyOVY2OC4zNzVDMTEyOSA1Ny45NSAxMTI4LjU1IDUxLjQyNSAxMTI3LjY1IDQ4LjhDMTEyNi43NSA0Ni4xNzUgMTEyNC42MSA0NC44NjI1IDExMjEuMjMgNDQuODYyNUMxMTE4LjMxIDQ0Ljg2MjUgMTExNi4zMiA0NS45ODc1IDExMTUuMjcgNDguMjM3NUMxMTE0LjIyIDUwLjQ4NzUgMTExMy43IDU2LjI2MjUgMTExMy43IDY1LjU2MjVWMTUyLjk3NUMxMTEzLjcgMTYxLjE1IDExMTQuMjIgMTY2LjUzMSAxMTE1LjI3IDE2OS4xMTlDMTExNi4zMiAxNzEuNzA2IDExMTguNDIgMTczIDExMjEuNTcgMTczQzExMjUuMDIgMTczIDExMjcuMzYgMTcxLjUzOCAxMTI4LjYgMTY4LjYxMkMxMTI5Ljg0IDE2NS42ODcgMTEzMC40NiAxNTkuOTg3IDExMzAuNDYgMTUxLjUxMlYxMjkuOTEzSDExMjAuOVYxMDIuMjM4SDExNzYuMzZWMjAwSDExNDYuNTVMMTE0Mi4xNiAxODYuOTVDMTEzOC45MyAxOTIuNTc1IDExMzQuODYgMTk2Ljc5NCAxMTI5Ljk1IDE5OS42MDZDMTEyNS4wNCAyMDIuNDE5IDExMTkuMjUgMjAzLjgyNSAxMTEyLjU3IDIwMy44MjVDMTEwNC42MiAyMDMuODI1IDEwOTcuMTggMjAxLjg5NCAxMDkwLjI0IDE5OC4wMzFDMTA4My4zIDE5NC4xNjkgMTA3OC4wMyAxODkuMzg3IDEwNzQuNDMgMTgzLjY4N0MxMDcwLjgzIDE3Ny45ODcgMTA2OC41OCAxNzIuMDA2IDEwNjcuNjggMTY1Ljc0NEMxMDY2Ljc4IDE1OS40ODEgMTA2Ni4zMyAxNTAuMDg4IDEwNjYuMzMgMTM3LjU2M1Y4My40NUMxMDY2LjMzIDY2LjA1IDEwNjcuMjcgNTMuNDEyNSAxMDY5LjE1IDQ1LjUzNzVDMTA3MS4wMiAzNy42NjI1IDEwNzYuNCAzMC40NDM4IDEwODUuMjkgMjMuODgxM0MxMDk0LjE4IDE3LjMxODggMTEwNS42NyAxNC4wMzc1IDExMTkuNzcgMTQuMDM3NUMxMTMzLjY1IDE0LjAzNzUgMTE0NS4xNiAxNi44ODc1IDExNTQuMzEgMjIuNTg3NUMxMTYzLjQ2IDI4LjI4NzUgMTE2OS40MiAzNS4wNTYyIDExNzIuMiA0Mi44OTM3QzExNzQuOTcgNTAuNzMxMiAxMTc2LjM2IDYyLjExMjUgMTE3Ni4zNiA3Ny4wMzc1Vjg0LjkxMjVaIiBmaWxsPSIjMkU4RkZGIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMF80NyI+CjxyZWN0IHdpZHRoPSIxMTg0IiBoZWlnaHQ9IjIxOSIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K" width="1184" height="219" alt=""></p><div class="hero-title-bottom"><h1><span class="hero-badge">AI 마케팅 자동화</span><span>시연회</span></h1><p>LIVE DEMO <span>2026</span></p></div></div>
     <div class="hero-bottom"><p><strong>2026. 12. 03 THU</strong><span>19:00 – 20:30 · 강남역 토즈타워 6층</span></p><a class="cta" href="#apply" id="heroCta">참석 신청하기<img class="arr" src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiBvdmVyZmxvdz0idmlzaWJsZSIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJBcnJvdyBSaWdodCI+CjxwYXRoIGlkPSJWZWN0b3IgMTA2IiBkPSJNMy4zMzMzMyAxMEwxNi42NjY3IDEwTTExLjY2NjcgNUwxNi42NjY3IDEwTDExLjY2NjcgMTUiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9IndoaXRlIi8+CjwvZz4KPC9zdmc+Cg==" width="20" height="20" alt=""></a></div>
   </div>
 </header>
@@ -650,14 +712,14 @@ footer a{font-weight:900}
 <div class="band"><div class="wrap"><dl>
   <div><dt>일시</dt><dd>12월 3일(목) 저녁 7시 · 90분</dd></div>
   <div><dt>장소</dt><dd>강남역 토즈타워 6층</dd></div>
-  <div><dt>대상</dt><dd>원장님 대상</dd></div>
+  <div><dt>대상</dt><dd>원장님 · 동료 원장님 동반 가능</dd></div>
 </dl></div></div>
 
 <main>
   <section id="demo">
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">LIVE DEMO</p>
-      <h2>마케팅의 다음 장면을,<br>현장에서 만나보세요.</h2><p class="sub">세 가지 AI 마케팅 자동화를 실제 화면으로 보여드립니다.</p></div>
+      <h2><em>AI 마케팅 자동화 3가지</em>를<br>현장에서 보여드립니다.</h2><p class="sub">문자 · 검색 노출 홈페이지 · SNS 콘텐츠, 실제 화면으로 직접 시연합니다.</p></div>
       <ol class="demo">
         <li><div class="session-copy"><span class="num" aria-hidden="true">01</span><span class="no">문자 자동 큐레이션</span><h3>환자의 모든 여정을 관리할 수 있는<br> 문자를 큐레이션해 드립니다</h3><p>누구에게 보낼지는 AI가 골라 드리고, 어떤 내용을 보낼지도 AI가 먼저 제안합니다. 기본적인 환자 관리는 물론, 재방문과 예약까지 이어지는 문자 솔루션을 현장에서 직접 만나보세요.</p><ol class="tags flow"><li>상담 후 예약 유도</li><li>시술 전 안내</li><li>시술 후 관리</li><li>재방문 시기 알림</li><li>오랜만인 환자 다시 부르기</li></ol></div><div class="session-art art-message art-sms" aria-hidden="true"><span class="art-label">CONNECT / 01</span>
           <div class="sms-stage">
@@ -692,6 +754,33 @@ footer a{font-weight:900}
     </div>
   </section>
 
+  <section id="connect" aria-labelledby="connect-title">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">HOMEPAGE × CRM</p>
+      <h2 id="connect-title">홈페이지와 CRM이 연결되어야<br><em>환자가 예약까지</em> 이어집니다.</h2>
+      <p class="sub">홈페이지에 남긴 상담이 CRM에 바로 쌓이고, 환자에게 맞는 문자가 이어서 나갑니다. 놓치는 문의 없이 예약과 재방문까지 연결됩니다.</p></div>
+      <ol class="cx-flow">
+        <li><span class="cx-step">STEP 01</span><span class="cx-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="1.5"/><path d="M3 8.5h18"/><path d="M6 6.3h.01M8.3 6.3h.01"/><path d="m11 11.5 6 2.2-2.6 1.1-1.1 2.6z"/></svg></span><b>홈페이지 방문</b><small>검색과 AI 추천으로 들어온 환자가 상담을 남깁니다</small></li>
+        <li class="cx-hub"><span class="cx-step">STEP 02</span><span class="cx-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="8.5" cy="10" r="2.2"/><path d="M5.3 16.5c.5-1.8 1.7-2.8 3.2-2.8s2.7 1 3.2 2.8"/><path d="M14.5 9.5h3.5M14.5 12.5h3.5M14.5 15.5h2"/></svg></span><b>CRM 자동 등록</b><small>남긴 정보가 CRM 환자 목록에 바로 등록됩니다</small></li>
+        <li><span class="cx-step">STEP 03</span><span class="cx-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h16a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1h-9.5L6 20.5V17H4a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1z"/><path d="M7 9h10M7 12.3h6"/></svg></span><b>맞춤 문자</b><small>관심 시술과 상담 내용에 맞는 문자가 나갑니다</small></li>
+        <li><span class="cx-step">STEP 04</span><span class="cx-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m9 14.5 2 2 4-4"/></svg></span><b>예약·재방문</b><small>예약으로 이어지고, 시술 뒤에는 재방문 시기를 챙깁니다</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="save" aria-labelledby="save-title">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">LESS LABOR COST</p>
+      <h2 id="save-title">마케팅 인건비<br><em>부담을 줄입니다.</em></h2>
+      <p class="sub">문자 작성, 홈페이지 관리, SNS 콘텐츠 제작처럼 반복하던 일을 AI가 대신합니다.</p></div>
+      <ul class="sv-list">
+        <li><span class="sv-no">01</span><span class="sv-before"><small>반복하던 일</small><s>문자 작성</s></span><span class="sv-arrow" aria-hidden="true">→</span><span class="sv-after"><small>AI가 대신</small>보낼 대상과 문구를 먼저 제안</span></li>
+        <li><span class="sv-no">02</span><span class="sv-before"><small>반복하던 일</small><s>홈페이지 관리</s></span><span class="sv-arrow" aria-hidden="true">→</span><span class="sv-after"><small>AI가 대신</small>검색에 잘 걸리도록 꾸준히 업데이트</span></li>
+        <li><span class="sv-no">03</span><span class="sv-before"><small>반복하던 일</small><s>SNS 콘텐츠 제작</s></span><span class="sv-arrow" aria-hidden="true">→</span><span class="sv-after"><small>AI가 대신</small>병원 분위기에 맞춰 자동으로 생성</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="info">
     <div class="wrap narrow">
       <div class="sec-head"><p class="eyebrow">EVENT INFORMATION</p>
@@ -705,8 +794,8 @@ footer a{font-weight:900}
           <li>병원별 개별 상담</li>
           <li>당일 도입 안내와 질의응답</li>
         </ol></dd>
-        <dt>장소</dt><dd>강남역 토즈타워 6층<small><a href="https://map.naver.com/p/search/%EA%B0%95%EB%82%A8%EC%97%AD%20%ED%86%A0%EC%A6%88%ED%83%80%EC%9B%8C" target="_blank" rel="noopener">네이버 지도에서 보기</a></small></dd>
-        <dt>대상</dt><dd>1stCRM을 사용하는 원장님과 함께 오시는 동료 원장님<small>원장님 대상 세미나로 진행합니다. 병원 직원분은 함께 입장하실 수 없는 점 양해 부탁드립니다.</small></dd>
+        <dt>장소</dt><dd>강남역 토즈타워 6층<small class="park">주차가 어렵습니다. 건너편 한라클래식 오피스텔 유료 주차장을 이용해 주세요.</small><small><a href="https://map.naver.com/p/search/%EA%B0%95%EB%82%A8%EC%97%AD%20%ED%86%A0%EC%A6%88%ED%83%80%EC%9B%8C" target="_blank" rel="noopener">네이버 지도에서 보기</a></small></dd>
+        <dt>대상</dt><dd>원장님 · 동료 원장님 동반 가능<small>원장님 대상 세미나로 진행합니다. 병원 직원분은 입장하실 수 없는 점 양해 부탁드립니다.</small></dd>
       </dl>
     </div>
   </section>
@@ -750,9 +839,9 @@ footer a{font-weight:900}
         <fieldset class="field" data-f="interest">
           <legend>가장 궁금한 시연<span class="opt">여러 개 선택 가능</span></legend>
           <div class="choices">
-            <label class="choice"><input type="checkbox" name="interest" value="고객 여정 맞춤 문자">고객 여정 맞춤 문자</label>
-            <label class="choice"><input type="checkbox" name="interest" value="홈페이지 SEO·AEO·GEO">홈페이지 SEO·AEO·GEO</label>
-            <label class="choice"><input type="checkbox" name="interest" value="SNS 콘텐츠 생성·관리">SNS 콘텐츠 생성·관리</label>
+            <label class="choice"><input type="checkbox" name="interest" value="고객 여정 맞춤 문자"><b class="cn">01</b>고객 여정 맞춤 문자</label>
+            <label class="choice"><input type="checkbox" name="interest" value="홈페이지 SEO·AEO·GEO"><b class="cn">02</b>홈페이지 SEO·AEO·GEO</label>
+            <label class="choice"><input type="checkbox" name="interest" value="SNS 콘텐츠 생성·관리"><b class="cn">03</b>SNS 콘텐츠 생성·관리</label>
           </div>
         </fieldset>
 
@@ -791,7 +880,8 @@ footer a{font-weight:900}
         <p id="doneMsg">누구보다 앞서갈 기회의 자리로 준비하겠습니다.</p>
         <dl class="ticket">
           <div><dt>일시</dt><dd>12월 3일(목) 저녁 7시 · 90분</dd></div>
-          <div><dt>장소</dt><dd>강남역 토즈타워 6층 <a href="https://map.naver.com/p/search/%EA%B0%95%EB%82%A8%EC%97%AD%20%ED%86%A0%EC%A6%88%ED%83%80%EC%9B%8C" target="_blank" rel="noopener">지도 보기</a></dd></div>
+          <div><dt>장소</dt><dd>강남역 토즈타워 6층 <a href="https://map.naver.com/p/search/%EA%B0%95%EB%82%A8%EC%97%AD%20%ED%86%A0%EC%A6%88%ED%83%80%EC%9B%8C" target="_blank" rel="noopener">지도 보기</a><small>주차 불가 · 건너편 한라클래식 오피스텔 유료 주차</small></dd></div>
+          <div><dt>대상</dt><dd>원장님 · 동료 원장님 동반 가능 (병원 직원 입장 불가)</dd></div>
           <div><dt>안내</dt><dd>행사 전에 안내 문자를 보내드립니다</dd></div>
         </dl>
         <div class="invite">
@@ -1033,7 +1123,7 @@ new IntersectionObserver(([e]) => { applyVisible = e.isIntersecting; sync(); }, 
   es.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top||a.boundingClientRect.left-b.boundingClientRect.left)
    .forEach((e,i)=>{e.target.style.transitionDelay=Math.min(i,7)*80+'ms';e.target.classList.add('rv-in');io.unobserve(e.target)});
  },{rootMargin:'0px 0px -8% 0px'});
- document.querySelectorAll('.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*').forEach(el=>io.observe(el));})();
+ document.querySelectorAll('.hero-title, .hero-bottom, .intro .eyebrow, .intro h2, .intro-spark, .intro .lede, .points-title, .points li, .band dl>div, #demo .sec-head>*, .demo>li, #info .sec-head>*, .info dt, .info dd, #apply .sec-head>*, #apply .card, footer .wrap>*, #connect .sec-head>*, .cx-flow>li, #save .sec-head>*, .sv-list>li').forEach(el=>io.observe(el));})();
 </script>
 </body>
 </html>
